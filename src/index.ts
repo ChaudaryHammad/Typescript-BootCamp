@@ -14,7 +14,7 @@ console.log("Function is called",n,r);
 }
 
 
-myName(77,90);
+myName(75,90);
 
 
 type variabe= (t:number,s:number)=>number
@@ -41,3 +41,88 @@ let object1:notFun={
 
 
 console.log(object1.x);
+
+
+//arrays 2 methods
+
+let num:number[]=[1,2,3,4,5,6,7,8,9,10];
+
+let fruits:Array<string>=["apple","banana","mango","orange"];
+let fruitsNames:Array<string | number>=["apple","banana","mango","orange",10,11,12];
+
+
+console.log(fruits[1]);
+console.log(fruitsNames[5]);
+
+let arr:[number,number,string]=[1,2,'Tuple']
+console.log(arr[2]);
+
+
+// objects
+// 1st method
+let obj:{
+    height:number,
+    width:number,
+    gender:boolean
+}={
+    height:300,
+    width:200,
+    gender:true
+}
+
+
+console.log(obj.gender);
+
+
+// boject by type alias
+
+
+type area={
+    height:number,
+    width:number,
+    gender?:boolean  // we made this property as optional
+}
+
+let obj1:area={
+    height:800,
+    width:900,
+    gender:false
+}
+
+let obj2:area={
+    height:800,
+    width:900,
+    
+}
+
+console.log(obj1.gender);
+console.log(obj2.height ,"<-w h->", obj2.width);
+
+// Objects with interface
+
+
+interface area1{
+    height?:number,
+    width?:number
+}
+
+interface area2 extends area1{
+    gender:boolean,
+    nam:string,
+    funv:(aa:number,ba:number)=>void;
+}
+
+
+let obj3:area2={
+    gender:true,
+    nam:"Naeem",
+    funv:(aa,ba)=>{
+        console.log(aa+ba)
+    }
+}
+
+
+console.log(obj3.gender,obj3.nam);
+
+obj3.funv(22,2)
+
