@@ -57,3 +57,7 @@ let obj3 = {
 };
 console.log(obj3.gender, obj3.nam);
 obj3.funv(22, 2);
+let funct = (n, m, l = 20) => {
+    return n + m + l;
+};
+console.log(funct(2, 3));

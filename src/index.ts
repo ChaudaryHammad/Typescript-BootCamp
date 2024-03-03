@@ -126,3 +126,15 @@ console.log(obj3.gender,obj3.nam);
 
 obj3.funv(22,2)
 
+
+//rest operator
+
+type FuncType=(n:number,m:number,l?:number)=>number;
+
+
+let funct:FuncType=(n,m,l=20)=>{
+    return n+m+l;
+}
+
+
+console.log(funct(2,3));
