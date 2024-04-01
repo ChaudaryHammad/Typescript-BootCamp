@@ -158,7 +158,7 @@ form.onsubmit=(e:SubmitEvent)=>{
     e.preventDefault();
     const value = Number(input.value);
     console.log(typeof value);
-    result.textContent = value.toString();
+    result.textContent =String(value + 20)
     document.body.appendChild(result);
 }
 

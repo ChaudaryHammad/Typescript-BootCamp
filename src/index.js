@@ -99,6 +99,6 @@ form.onsubmit = function (e) {
     e.preventDefault();
     var value = Number(input.value);
     console.log(typeof value);
-    result.textContent = value.toString();
+    result.textContent = String(value + 20);
     document.body.appendChild(result);
 };
