@@ -163,5 +163,15 @@ form.onsubmit=(e:SubmitEvent)=>{
 }
 
 
+interface Person{
+    name:string,
+    age?:number,
+}
 
 
+const person:Person={
+    name:"Hamad",
+ 
+}
+
+console.log(person.name);

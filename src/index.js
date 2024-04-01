@@ -102,3 +102,7 @@ form.onsubmit = function (e) {
     result.textContent = String(value + 20);
     document.body.appendChild(result);
 };
+var person = {
+    name: "Hamad",
+};
+console.log(person.name);
