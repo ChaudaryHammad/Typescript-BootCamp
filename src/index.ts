@@ -140,3 +140,15 @@ let funct:FuncType=(n,m,l=20)=>{
 
 
 console.log(funct(2,3));
+
+// type asertion
+
+const btn = document.getElementById('btn') !;
+const btn2 = document.getElementById('btn') as HTMLButtonElement;
+const btn3 = <HTMLButtonElement>document.getElementById('btn');
+
+
+
+
+
+
