@@ -10,6 +10,8 @@ console.log(tambo,b);
 
 const  myName=(n:number,r:number)=>{
 console.log("Function is called",n,r);
+console.log("Function is called",n,r);
+
 
 }
 
