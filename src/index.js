@@ -105,4 +105,7 @@ form.onsubmit = function (e) {
 var person = {
     name: "Hamad",
 };
-console.log(person.name);
+var getData = function (key) {
+    return person[key];
+};
+console.log(getData("name"));

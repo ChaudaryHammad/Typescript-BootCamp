@@ -164,8 +164,7 @@ form.onsubmit=(e:SubmitEvent)=>{
 
 
 interface Person{
-    name:string,
-    age?:number,
+ [key:string]:string
 }
 
 
@@ -174,4 +173,8 @@ const person:Person={
  
 }
 
-console.log(person.name);
+const getData=(key:string):string=>{
+    return person[key] 
+}
+
+console.log(getData("name"));
