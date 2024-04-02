@@ -236,5 +236,19 @@ type User={
     email:string
 }
 
-type User1 = Record<"name"|"email",string>
+// type User1 = Record<"name"|"email",string>
+
+
+// Pick and omit utility types
+// Pick<Type,Keys>
+// it creates a type by picking some properties from another type
+
+
+interface OrderInfo {
+readonly id:string,
+user:string,
+city:string,
+state:String
+
+}
 
