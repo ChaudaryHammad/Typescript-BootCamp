@@ -201,12 +201,40 @@
 // 2. Required<Type>
 // it is opposite of Partial<Type> it makes all properties required
 
-type user={
-    name?:string,
-    age:number
-}
+// type user={
+//     name?:string,
+//     age:number
+// }
 
 
-type user1 = Required<user>
+// type user1 = Required<user>
 
 // now the user1 has all required properties
+
+
+// 3. readonly<Type>
+//  it makes all properties readonly and restricts to change the value of properties
+
+// type user={
+//     name?:string,
+//     age:number
+// }
+
+// const user1: Readonly<user> = {
+//     name:"Hamad",
+//     age:23
+// }
+
+// user1.name = "Naeem"; // it will give error because we made name property readonly
+
+
+// 4. Record<Keys,Type>
+// it creates an object type whose property keys are Keys and values are Type
+
+type User={
+    name:string,
+    email:string
+}
+
+type User1 = Record<"name"|"email",string>
+
