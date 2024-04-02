@@ -150,31 +150,50 @@
 
 
 
-const form = document.getElementById('form') as HTMLFormElement;
-const input = document.getElementById('input') as HTMLInputElement;
-const result = document.getElementById('result') as HTMLDivElement;
+// const form = document.getElementById('form') as HTMLFormElement;
+// const input = document.getElementById('input') as HTMLInputElement;
+// const result = document.getElementById('result') as HTMLDivElement;
 
-form.onsubmit=(e:SubmitEvent)=>{
-    e.preventDefault();
-    const value = Number(input.value);
-    console.log(typeof value);
-    result.textContent =String(value + 20)
-    document.body.appendChild(result);
-}
-
-
-interface Person{
- [key:string]:string
-}
+// form.onsubmit=(e:SubmitEvent)=>{
+//     e.preventDefault();
+//     const value = Number(input.value);
+//     console.log(typeof value);
+//     result.textContent =String(value + 20)
+//     document.body.appendChild(result);
+// }
 
 
-const person:Person={
-    name:"Hamad",
+// interface Person{
+//  [key:string]:string
+// }
+
+
+// const person:Person={
+//     name:"Hamad",
  
+// }
+
+// const getData=(key:string):string=>{
+//     return person[key] 
+// }
+
+// console.log(getData("name"));
+
+// utlity types
+
+// 1. Partial<Type>
+// It makes properties optional like we did using ? in interface
+
+type user = {
+    name:string,
+    email:string,
 }
 
-const getData=(key:string):string=>{
-    return person[key] 
+
+const user1:Partial<user>={
+    name:"Hamad",
+    email:"abc@gmail.com"
 }
 
-console.log(getData("name"));
+console.log(user1.name);
+
