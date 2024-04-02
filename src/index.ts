@@ -184,16 +184,29 @@
 // 1. Partial<Type>
 // It makes properties optional like we did using ? in interface
 
-type user = {
-    name:string,
-    email:string,
+// type user = {
+//     name:string,
+//     email?:string,
+// }
+
+
+// type user1 = Partial<user>
+
+// const user1={
+//     name:"Hamad"
+//     }
+
+// console.log(user1.name);
+
+// 2. Required<Type>
+// it is opposite of Partial<Type> it makes all properties required
+
+type user={
+    name?:string,
+    age:number
 }
 
 
-const user1:Partial<user>={
-    name:"Hamad",
-    email:"abc@gmail.com"
-}
+type user1 = Required<user>
 
-console.log(user1.name);
-
+// now the user1 has all required properties

@@ -6,8 +6,4 @@
 // let b = <number>20 //type assertion
 // console.log(nambo,surname);
 // console.log(tambo,b);
-var user1 = {
-    name: "Hamad",
-    email: "abc@gmail.com"
-};
-console.log(user1.name);
+// now the user1 has all required properties
