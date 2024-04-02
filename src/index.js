@@ -6,3 +6,9 @@
 // let b = <number>20 //type assertion
 // console.log(nambo,surname);
 // console.log(tambo,b);
+var ShippingInfo2 = {
+    city: "Karachi",
+    state: "Sindh",
+    user: "Hamad"
+};
+console.log(ShippingInfo2.city);

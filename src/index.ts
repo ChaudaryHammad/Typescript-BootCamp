@@ -252,3 +252,13 @@ state:String
 
 }
 
+type ShippingInfo =  Pick<OrderInfo,"city" |"state" | "user">
+
+const ShippingInfo2:ShippingInfo = {
+    city:"Karachi",
+    state:"Sindh",
+    user:"Hamad"
+}
+
+console.log(ShippingInfo2.city);
+
