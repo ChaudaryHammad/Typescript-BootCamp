@@ -305,11 +305,11 @@ type nonNull = NonNullable<myType>;
 // InstanceType<Type>
 // it extracts the instance type of a constructor function type
 
-const myFunc = (a:number , b:number)=>{
-    console.log(a + b);
+const myFunc = (a:number , b:number):number=>{
+    return a*b;
 }
 
-myFunc(2,3);
+console.log(myFunc(2,3));
 
 type Params = Parameters<typeof myFunc>
 
@@ -318,3 +318,16 @@ const anotherFunction = (a:Params[0],b:Params[1])=>{
 }
 
 anotherFunction(2,3);
+
+
+type returnTy = ReturnType<typeof myFunc>
+
+type num = {
+    age:returnTy
+}
+
+const obj:num={
+    age:63
+}   
+
+console.log(obj.age);

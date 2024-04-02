@@ -26,10 +26,14 @@ console.log(Address.state);
 // InstanceType<Type>
 // it extracts the instance type of a constructor function type
 var myFunc = function (a, b) {
-    console.log(a + b);
+    return a * b;
 };
-myFunc(2, 3);
+console.log(myFunc(2, 3));
 var anotherFunction = function (a, b) {
     console.log(a * b);
 };
 anotherFunction(2, 3);
+var obj = {
+    age: 63
+};
+console.log(obj.age);
