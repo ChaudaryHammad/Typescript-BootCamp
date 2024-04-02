@@ -283,7 +283,7 @@ console.log(Address.state);
 
 // 5. Exclude<Type,ExcludeUnion>
 
-type myType = string | number | boolean;
+type myType = string | number | boolean | undefined | null;
 
 type ExcludeType = Exclude<myType,string>;  
 // it will exclude string from myType
@@ -291,3 +291,30 @@ type ExcludeType = Exclude<myType,string>;
 // Extract<Type>
 
 type ExtractType = Extract<myType,string>;  
+
+
+type nonNull = NonNullable<myType>;
+
+
+// Parameters<Type>
+// it extracts the parameters of a function type in a tuple
+// ConstructorParameters<Type>
+// it extracts the parameters of a constructor function in a tuple
+// ReturnType<Type>
+// it extracts the return type of a function type
+// InstanceType<Type>
+// it extracts the instance type of a constructor function type
+
+const myFunc = (a:number , b:number)=>{
+    console.log(a + b);
+}
+
+myFunc(2,3);
+
+type Params = Parameters<typeof myFunc>
+
+const anotherFunction = (a:Params[0],b:Params[1])=>{
+    console.log(a *b);
+}
+
+anotherFunction(2,3);

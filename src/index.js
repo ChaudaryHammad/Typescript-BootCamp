@@ -17,3 +17,19 @@ var Address = {
     state: "Sindh"
 };
 console.log(Address.state);
+// Parameters<Type>
+// it extracts the parameters of a function type in a tuple
+// ConstructorParameters<Type>
+// it extracts the parameters of a constructor function in a tuple
+// ReturnType<Type>
+// it extracts the return type of a function type
+// InstanceType<Type>
+// it extracts the instance type of a constructor function type
+var myFunc = function (a, b) {
+    console.log(a + b);
+};
+myFunc(2, 3);
+var anotherFunction = function (a, b) {
+    console.log(a * b);
+};
+anotherFunction(2, 3);
