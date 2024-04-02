@@ -12,3 +12,8 @@ var ShippingInfo2 = {
     user: "Hamad"
 };
 console.log(ShippingInfo2.city);
+var Address = {
+    city: "Karachi",
+    state: "Sindh"
+};
+console.log(Address.state);

@@ -262,3 +262,32 @@ const ShippingInfo2:ShippingInfo = {
 
 console.log(ShippingInfo2.city);
 
+type Random = Omit<ShippingInfo,"user">
+
+const Address:Random = {
+    city:"Karachi",
+    state:"Sindh"
+
+}
+
+console.log(Address.state);
+
+
+// 5. Exclude<Type,ExcludeUnion>
+// it creates a type by excluding some types from another type
+// Extract<Type,Union>
+// it creates a type by extracting some typesfrom another type
+// NonNullable<Type>
+// it creates a type by excluding null and undefined from another type
+
+
+// 5. Exclude<Type,ExcludeUnion>
+
+type myType = string | number | boolean;
+
+type ExcludeType = Exclude<myType,string>;  
+// it will exclude string from myType
+
+// Extract<Type>
+
+type ExtractType = Extract<myType,string>;  
