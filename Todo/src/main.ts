@@ -39,6 +39,7 @@ const generateTodoItem=(title:string,isCompleted:boolean,id:string)=>{
 
 const p = document.createElement('p') as HTMLParagraphElement
 p.textContent = title
+p.className = isCompleted ? "textCut" : ""
 const button = document.createElement('button') as HTMLButtonElement
 button.textContent = 'X'
 button.className='deleteBtn'
@@ -47,6 +48,11 @@ todo.append(checkBox,p ,button)
 todoContainer.append(todo)
 
 checkBox.onchange=()=>{
+  todos.find((item)=>{
+    if(item.id === id){
+     item.isCompleted =  checkBox.checked
+    }
+  })
   p.className = checkBox.checked ? "textCut" : ""
 }
 
