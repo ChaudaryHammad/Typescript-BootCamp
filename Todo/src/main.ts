@@ -1,24 +1,76 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+interface Todo{
+  title:string,
+  isCompleted:boolean,
+  readonly id:string
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const todos:Todo[] = []
+
+const input = document.getElementsByName('title')[0] as HTMLInputElement
+const form = document.querySelector('form') as HTMLFormElement
+const todoContainer = document.getElementById('todoContainer') as HTMLDivElement
+
+form.onsubmit=(e: SubmitEvent)=>{
+  e.preventDefault();
+ 
+  const todo:Todo={
+    title:input.value,
+    isCompleted:false,
+    id:Date.now().toString()
+  }
+
+  todos.push(todo)
+  input.value = ''
+
+  renderTodos(todos)
+  
+
+}
+
+const generateTodoItem=(title:string,isCompleted:boolean,id:string)=>{
+  const todo = document.createElement('div') as HTMLDivElement
+  todo.className='todo'
+  const checkBox = document.createElement('input') as HTMLInputElement
+  checkBox.setAttribute('type','checkbox')
+  checkBox.className="isCompleted"
+  checkBox.checked = isCompleted
+
+const p = document.createElement('p') as HTMLParagraphElement
+p.textContent = title
+const button = document.createElement('button') as HTMLButtonElement
+button.textContent = 'X'
+button.className='deleteBtn'
+
+todo.append(checkBox,p ,button)
+todoContainer.append(todo)
+
+checkBox.onchange=()=>{
+  p.className = checkBox.checked ? "textCut" : ""
+}
+
+button.onclick=()=>{
+  deleteTodo(id)
+
+}
+
+}
+
+const deleteTodo=(id:string)=>{
+
+  const idx = todos.findIndex(item=>item.id===id)
+  todos.splice(idx,1)
+  renderTodos(todos)
+
+}
+
+
+
+const renderTodos = (todos:Todo[])=>{
+  todoContainer.innerText = ''
+todos.forEach(todo=>{
+  generateTodoItem(todo.title,todo.isCompleted,todo.id)
+})
+
+}
