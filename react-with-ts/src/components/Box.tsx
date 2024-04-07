@@ -1,12 +1,14 @@
 
 
+
 type BoxProps = {
     heading:string,
     count:number,
-    func1:()=>void
+    func1:()=>void,
+    children:React.ReactNode
 }
 
-const Box = ({heading,count,func1}:BoxProps) => {
+const Box = ({heading,count,func1,children}:BoxProps) => {
    
   return (
 <>
@@ -17,6 +19,8 @@ const Box = ({heading,count,func1}:BoxProps) => {
         func1()
     
     }}>click me</button>
+
+    <p>{children}</p>
     
 </>
   )

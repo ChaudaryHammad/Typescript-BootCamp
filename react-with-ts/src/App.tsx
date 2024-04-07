@@ -12,7 +12,13 @@ function App() {
    <h1>Typescrip</h1>
    <Box heading="heading 1" count={count} func1={()=>{
   setCount(count+1) 
-   }} />
+   }} >
+    {
+
+      
+"hello world"
+    }
+    </Box>
     </>
   )
 }
