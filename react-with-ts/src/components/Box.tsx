@@ -5,11 +5,12 @@ type BoxProps = {
     count:number
 }
 
-const Box = ({heading}:{heading:string}) => {
+const Box = ({heading,count}:BoxProps) => {
   return (
 <>
 <div>Box</div>
     <h1>{heading}</h1>
+    <p>{count}</p>
 </>
   )
 }
