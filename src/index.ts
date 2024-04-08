@@ -359,3 +359,14 @@ function createPair<S, T>(v1: S, v2: T): [S, T] {
   let value = new NamedValue<number>('myNumber');
   value.setValue(10);
   console.log(value.toString()); // myNumber: 10
+
+
+
+  // generics
+
+  const Convert = <T>(input:T):T[] =>{
+   const x =  [input]
+    return x;
+  }
+
+console.log(Convert("123"+"324"));

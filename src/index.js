@@ -59,3 +59,9 @@ var NamedValue = /** @class */ (function () {
 var value = new NamedValue('myNumber');
 value.setValue(10);
 console.log(value.toString()); // myNumber: 10
+// generics
+var Convert = function (input) {
+    var x = [input];
+    return x;
+};
+console.log(Convert("123" + "324"));
