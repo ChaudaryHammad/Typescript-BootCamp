@@ -369,12 +369,14 @@ function createPair<S, T>(v1: S, v2: T): [S, T] {
     return x;
   }
 
+  type restrictedType = string | number;
+
 console.log(Convert("123"+"324"));
 
-function TwoArrays <T,K>(input1:T, input2:K):[T,K]{
+function TwoArrays <T,K extends restrictedType>(input1:T, input2:K):[T,K]{
     return [input1,input2]
 
 }
 
 
-console.log(TwoArrays(2,"Hamad"));
+console.log(TwoArrays(2,"r"));
