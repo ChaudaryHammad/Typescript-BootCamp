@@ -65,3 +65,7 @@ var Convert = function (input) {
     return x;
 };
 console.log(Convert("123" + "324"));
+function TwoArrays(input1, input2) {
+    return [input1, input2];
+}
+console.log(TwoArrays(2, "Hamad"));
