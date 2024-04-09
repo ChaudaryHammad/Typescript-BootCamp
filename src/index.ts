@@ -380,3 +380,11 @@ function TwoArrays <T,K extends restrictedType>(input1:T, input2:K):[T,K]{
 
 
 console.log(TwoArrays(2,"r"));
+
+
+
+function MyFun3<T>(inp:T){
+  return inp
+}
+
+MyFun3<number>(2)
