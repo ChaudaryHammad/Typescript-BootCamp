@@ -10,7 +10,7 @@ function App() {
     <>
       <h1>Typescrip</h1>
       <Box
-        headding="heading 1"
+        heading="heading 1"
         count={count}
         func1={() => {
           setCount(count + 1);
